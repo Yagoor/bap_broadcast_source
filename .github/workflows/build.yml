@@ -1,0 +1,46 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: bap_broadcast_source
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+
+      - name: Setup Zephyr project
+        uses: zephyrproject-rtos/action-zephyr-setup@v1
+        with:
+          app-path: bap_broadcast_source
+          toolchains: arm-zephyr-eabi
+
+      - name: Build firmware
+        working-directory: bap_broadcast_source
+        shell: bash
+        run: |
+          west twister -T app -v --inline-logs --integration
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Binaries and packages
+          path: |
+            bap_broadcast_source/**/*.hex

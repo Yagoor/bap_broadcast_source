@@ -1,0 +1,83 @@
+# This file is provided so that the application can be compiled using Twister,
+# the Zephyr testing tool. In this file, multiple combinations can be specified,
+# so that you can easily test all of them locally or in CI.
+sample:
+  description: Example application
+  name: example-application
+common:
+  build_only: true
+  integration_platforms:
+      - nrf52840dongle/nrf52840
+tests:
+  16kHz.0401AA:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="16kHz 0x0401AA"
+      - CONFIG_BROADCAST_ID=0x0401AA
+      - CONFIG_BAP_BROADCAST_16_2_1=y
+  16kHz.0401BB:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="16kHz 0x0401BB"
+      - CONFIG_BROADCAST_ID=0x0401BB
+      - CONFIG_BAP_BROADCAST_16_2_1=y
+  16kHz.0401CC:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="16kHz 0x0401CC"
+      - CONFIG_BROADCAST_ID=0x0401CC
+      - CONFIG_BAP_BROADCAST_16_2_1=y
+  16kHz.0401DD:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="16kHz 0x0401DD"
+      - CONFIG_BROADCAST_ID=0x0401DD
+      - CONFIG_BAP_BROADCAST_16_2_1=y
+  16kHz.0401EE:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="16kHz 0x0401EE"
+      - CONFIG_BROADCAST_ID=0x0401EE
+      - CONFIG_BAP_BROADCAST_16_2_1=y
+  16kHz.0401FF:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="16kHz 0x0401FF"
+      - CONFIG_BROADCAST_ID=0x0401FF
+      - CONFIG_BAP_BROADCAST_16_2_1=y
+  24kHz.0401AA:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="24kHz 0x0401AA"
+      - CONFIG_BROADCAST_ID=0x0401AA
+      - CONFIG_BAP_BROADCAST_24_2_1=y
+  24kHz.0401BB:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="24kHz 0x0401BB"
+      - CONFIG_BROADCAST_ID=0x0401BB
+      - CONFIG_BAP_BROADCAST_24_2_1=y
+  24kHz.0401CC:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="24kHz 0x0401CC"
+      - CONFIG_BROADCAST_ID=0x0401CC
+      - CONFIG_BAP_BROADCAST_24_2_1=y
+  24kHz.0401DD:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="24kHz 0x0401DD"
+      - CONFIG_BROADCAST_ID=0x0401DD
+      - CONFIG_BAP_BROADCAST_24_2_1=y
+  24kHz.0401EE:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="24kHz 0x0401EE"
+      - CONFIG_BROADCAST_ID=0x0401EE
+      - CONFIG_BAP_BROADCAST_24_2_1=y
+  24kHz.0401FF:
+    extra_args:
+      - EXTRA_CONF_FILE=overlay-bt_ll_sw_split.conf
+      - CONFIG_BT_DEVICE_NAME="24kHz 0x0401FF"
+      - CONFIG_BROADCAST_ID=0x0401FF
+      - CONFIG_BAP_BROADCAST_24_2_1=y
